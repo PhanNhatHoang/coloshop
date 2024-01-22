@@ -1,4 +1,4 @@
-package model;
+package com.web.coloshop.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
