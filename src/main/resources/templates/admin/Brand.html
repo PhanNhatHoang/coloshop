@@ -233,7 +233,7 @@
 
                                                 </li>
                                                 <li class="sidebar-list">
-                                                    <a class="sidebar-link sidebar-title link-nav active" href="#" data-bs-original-title=""
+                                                    <a class="sidebar-link sidebar-title link-nav " href="/categories" data-bs-original-title=""
                                                        title="">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -250,7 +250,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="sidebar-list">
-                                                    <a class="sidebar-link sidebar-title link-nav " href="/brands" data-bs-original-title=""
+                                                    <a class="sidebar-link sidebar-title link-nav active" href="/brands" data-bs-original-title=""
                                                        title="">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -266,6 +266,7 @@
 
                                                     </a>
                                                 </li>
+
                                             </div>
                                         </div>
                                     </div>
@@ -282,7 +283,7 @@
         <div class="page-body">
             <div class="container-fluid">
                 <div class="page-title">
-                    <h3>Category</h3>
+                    <h3>Brand</h3>
                 </div>
             </div>
             <!-- Container-fluid starts-->
@@ -292,14 +293,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class=" form theme-form">
-                                    <form action="/saveCategory" method="post">
+                                    <form action="/saveBrand" method="post">
                                         <div class="row" >
                                             <div class="col">
                                                 <div class="mb-3">
                                                     <div class="form-group " id="updateForm" style="display: none">
-                                                        <label for="categoryId" class="control-label col-md-2">Category ID:</label>
+                                                        <label for="brand_ID" class="control-label col-md-2">Brand ID:</label>
                                                         <div class="col-md-12">
-                                                            <input type="text" id="categoryId" name="id" readonly class="form-control text-box single-line">
+                                                            <input type="text" id="brand_ID" name="id" readonly class="form-control text-box single-line">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -309,7 +310,7 @@
                                             <div class="col">
                                                 <div class="mb-3">
                                                     <div class="form-group" >
-                                                        <label for="name" class="control-label col-md-2">Category Name:</label>
+                                                        <label for="name" class="control-label col-md-2">Brand Name:</label>
                                                         <div class="col-md-12">
                                                             <input type="text" id="name" name="name" required
                                                                    class="form-control text-box single-line">
@@ -330,7 +331,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="text-end">
-                                                    <button type="submit" class="btn btn-success me-3">Save Category</button>
+                                                    <button type="submit" class="btn btn-success me-3">Save Brand</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -344,22 +345,22 @@
                                     <table class="table table-border-horizontal">
                                         <thead>
                                         <tr>
-                                            <th scope="col" >Category ID</thscope>
-                                            <th scope="col">Category Name</th>
-                                            <th scope="col">Edit Category Name</th>
+                                            <th scope="col" >Brand ID</thscope>
+                                            <th scope="col">Brand Name</th>
+                                            <th scope="col">Edit Brand Name</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="category : ${categories}" >
-                                            <td th:text="${category.id}"></td>
-                                            <td th:text="${category.name}"></td>
+                                        <tr th:each="brand : ${brands}" >
+                                            <td th:text="${brand.id}"></td>
+                                            <td th:text="${brand.name}"></td>
                                             <td>
-                                                <a  class="btn btn-sm btn-primary" th:attr="onclick='updateCategory(\'' + ${category.id} + '\', \'' + ${category.name} + '\')'">Update</a>
+                                                <a  class="btn btn-sm btn-primary" th:attr="onclick='updateBrand(\'' + ${brand.id} + '\', \'' + ${brand.name} + '\')'">Update</a>
                                             </td>
                                             <td>
-                                                <a th:if = "${category.is_activated} == true" th:href="@{/delete-category(id = ${category.id})}" class="btn btn-sm btn-danger">Deleted</a>
-                                                <a th:if = "${category.is_activated} == false" th:href="@{/enable-category(id = ${category.id})}" class="btn btn-sm btn-info">Enabled</a>
+                                                <a th:if = "${brand.is_activated} == true" th:href="@{/delete-brand(id = ${brand.id})}" class="btn btn-sm btn-danger">Deleted</a>
+                                                <a th:if = "${brand.is_activated} == false" th:href="@{/enable-brand(id = ${brand.id})}" class="btn btn-sm btn-info">Enabled</a>
                                             </td>
                                         </tr>
                                         </tbody>
@@ -380,9 +381,9 @@
         <!-- login js-->
         <!-- Plugin used-->
         <script th:inline="javascript">
-            function updateCategory(id, name) {
+            function updateBrand(id, name) {
                 // Set values in the update form
-                document.getElementById("categoryId").value = id;
+                document.getElementById("brand_ID").value = id;
                 document.getElementById("name").value = name;
 
                 // Show the update form
