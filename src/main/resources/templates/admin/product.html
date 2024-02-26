@@ -233,7 +233,7 @@
 
                                                 </li>
                                                 <li class="sidebar-list">
-                                                    <a class="sidebar-link sidebar-title link-nav active" href="/categories" data-bs-original-title=""
+                                                    <a class="sidebar-link sidebar-title link-nav active" href="#" data-bs-original-title=""
                                                        title="">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -266,23 +266,6 @@
 
                                                     </a>
                                                 </li>
-                                                <li class="sidebar-list">
-                                                    <a class="sidebar-link sidebar-title link-nav " href="#" data-bs-original-title=""
-                                                       title="">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                             stroke-linejoin="round" class="feather feather-list">
-                                                            <line x1="8" y1="6" x2="21" y2="6"></line>
-                                                            <line x1="8" y1="12" x2="21" y2="12"></line>
-                                                            <line x1="8" y1="18" x2="21" y2="18"></line>
-                                                            <line x1="3" y1="6" x2="3" y2="6"></line>
-                                                            <line x1="3" y1="12" x2="3" y2="12"></line>
-                                                            <line x1="3" y1="18" x2="3" y2="18"></line>
-                                                        </svg>
-                                                        <span>Product</span>
-
-                                                    </a>
-                                                </li>
                                             </div>
                                         </div>
                                     </div>
@@ -309,49 +292,6 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class=" form theme-form">
-                                    <form action="/saveCategory" method="post">
-                                        <div class="row" >
-                                            <div class="col">
-                                                <div class="mb-3">
-                                                    <div class="form-group " id="updateForm" style="display: none">
-                                                        <label for="categoryId" class="control-label col-md-2">Category ID:</label>
-                                                        <div class="col-md-12">
-                                                            <input type="text" id="categoryId" name="id" readonly class="form-control text-box single-line">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="mb-3">
-                                                    <div class="form-group" >
-                                                        <label for="name" class="control-label col-md-2">Category Name:</label>
-                                                        <div class="col-md-12">
-                                                            <input type="text" id="name" name="name" required
-                                                                   class="form-control text-box single-line">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="mb-3">
-                                                    <div th:if="${error}"  class="alert alert-danger">
-                                                        <p th:text="${error}"></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="text-end">
-                                                    <button type="submit" class="btn btn-success me-3">Save Category</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>

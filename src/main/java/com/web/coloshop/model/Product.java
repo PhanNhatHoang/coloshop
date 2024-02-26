@@ -19,6 +19,8 @@ public class Product {
     private Float costprice;
     private Float saleprice;
     private Integer currentQuantity;
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
     private String Image;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "category_ID")
@@ -27,5 +29,8 @@ public class Product {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "brand_ID")
     private Brand brand;
+
+    private boolean is_deleted;
+    private boolean is_activated;
 
 }
