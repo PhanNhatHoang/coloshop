@@ -44,7 +44,8 @@ public class CategoryController {
                    attributes.addFlashAttribute("error", "Category with the specified ID not found.");
                }
            } else {
-               // Nếu không có id, đây là một trường hợp thêm mới
+               category.set_activated(true);
+               category.set_deleted(true);
                categoryService.save(category);
            }
        } else {

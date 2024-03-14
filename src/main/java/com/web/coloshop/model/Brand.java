@@ -19,9 +19,4 @@ public class Brand {
     private boolean is_deleted;
     private boolean is_activated;
 
-    public Brand(String name){
-        this.name = name;
-        this.is_activated = true;
-        this.is_deleted = false;
-    }
 }

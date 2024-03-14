@@ -18,10 +18,4 @@ public class Category {
     private String name;
     private boolean is_deleted;
     private boolean is_activated;
-
-    public Category(String name){
-        this.name = name;
-        this.is_activated = true;
-        this.is_deleted = false;
-    }
 }

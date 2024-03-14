@@ -36,13 +36,15 @@ public class BrandController {
                         existingBrandByID.setName(brand.getName());
                         brandservice.save(existingBrandByID);
                     }else {
-                        attributes.addFlashAttribute("error", "Category with the specified ID not found.");
+                        attributes.addFlashAttribute("error", "Brand with the specified ID not found.");
                     }
                 }else {
+                    brand.set_activated(true);
+                    brand.set_deleted(false);
                     brandservice.save(brand);
                 }
             }else {
-                attributes.addFlashAttribute("error", "Category Name with the same name already exists.");
+                attributes.addFlashAttribute("error", "Brand Name with the same name already exists.");
             }
         } catch (Exception e) {
             e.printStackTrace();

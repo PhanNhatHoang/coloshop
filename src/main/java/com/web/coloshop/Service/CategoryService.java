@@ -11,36 +11,36 @@ import java.util.Optional;
 @Service
 public class CategoryService {
     @Autowired
-    private CategoryRepository categoryRepository;
+    private CategoryRepository repo;
 
     public Category save(Category category) {
-          return categoryRepository.save(category);
+          return repo.save(category);
     }
     public List<Category> findAll(){
-        return categoryRepository.findAll();
+        return repo.findAll();
     }
     public Category findByName(String name) {
-        return categoryRepository.findByName(name);
+        return repo.findByName(name);
     }
     public Category findById(Long id) {
-        Optional<Category> optionalCategory = categoryRepository.findById(id);
+        Optional<Category> optionalCategory = repo.findById(id);
         return optionalCategory.orElse(null);
     }
     public void deleteById(Long id) {
-        Category category = categoryRepository.getById(id);
-        category.set_deleted(true);
+        Category category = repo.getById(id);
         category.set_activated(false);
-        categoryRepository.save(category);
+        category.set_deleted(true);
+        repo.save(category);
     }
     public void enabledById(Long id) {
-        Category category = categoryRepository.getById(id);
+        Category category = repo.getById(id);
         category.set_activated(true);
         category.set_deleted(false);
-        categoryRepository.save(category);
+        repo.save(category);
     }
+   // Product
     public List<Category> findAllByActivated() {
-        return categoryRepository.findAllByActivated();
+        return repo.findAllByActivated();
     }
-
 
 }
